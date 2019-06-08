@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './app/layout/App';
 import * as serviceWorker from './serviceWorker';
 
-const docEl = document.querySelector( '#root' );
-const render = () => ReactDOM.render( <App/>, docEl );
+const docEl  = document.querySelector( '#root' );
+const render = () => ReactDOM.render(
+  <BrowserRouter><App /></BrowserRouter>, docEl );
 
-if ( module.hot ) module.hot.accept( './app/layout/App', () => setTimeout( render ) );
+if (module.hot) module.hot.accept( './app/layout/App', () => setTimeout( render ) );
 
 render();
 // If you want your app to work offline and load faster, you can change
